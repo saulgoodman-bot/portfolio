@@ -1,26 +1,31 @@
-# Chandra Kiran Narala Portfolio
+# Chandra Kiran Narala Portfolio (Next.js)
 
-A responsive, dark-themed personal portfolio website focused on FPGA/RTL, low-latency systems, and hardware-software engineering.
+A premium dark-themed portfolio built with **Next.js + React + Tailwind CSS + TypeScript + Framer Motion + Lucide**.
 
-## Files
-- `index.html` – semantic layout and content
-- `styles.css` – responsive styling, dark theme, transitions, animations
-- `script.js` – mobile menu, reveal-on-scroll animation, dynamic year
+## Tech Stack
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
 
-## Run locally
-No build tools are required.
-
-1. Clone the repository.
-2. Open `index.html` directly in your browser.
-
-Optional local server (if preferred):
-
+## Local Development
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
-Then open `http://localhost:8000`.
+Open `http://localhost:3000`.
 
-## Customize
-- Replace Resume button URL in `index.html`.
-- Update contact placeholders (email, LinkedIn, GitHub).
-- Tune colors in `:root` inside `styles.css`.
+## Production Build
+```bash
+npm run build
+npm run start
+```
+
+## Content Editing
+All profile content is centralized in:
+- `data/portfolio.ts`
+
+Reusable UI components live in:
+- `components/`
