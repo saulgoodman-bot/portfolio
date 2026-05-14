@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-base text-white antialiased;
+  background-image: radial-gradient(circle at top right, rgba(60,70,100,.2), transparent 35%);
+}
+.section-wrap {
+  @apply border border-line bg-panel/50 rounded-3xl;
+}
