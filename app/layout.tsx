@@ -1,14 +1,21 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
 export const metadata: Metadata = {
-  title: 'Chandra Kiran Narala | Portfolio',
-  description: 'FPGA Engineer, Hardware-Aware Software Engineer, and Low-Latency Systems Engineer portfolio.'
+  title: 'Chandra Kiran Narala | FPGA Engineer',
+  description:
+    'Portfolio of Chandra Kiran Narala — FPGA Engineer, RTL Design, Low-Latency Systems, and ASIC/SoC Design.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );

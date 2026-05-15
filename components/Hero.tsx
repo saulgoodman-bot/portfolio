@@ -1,17 +1,54 @@
 'use client';
-import { motion } from 'framer-motion';
+
+import { useEffect, useRef } from 'react';
 
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    // Trigger reveal on mount
+    const els = ref.current?.querySelectorAll('.reveal');
+    els?.forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 100);
+    });
+  }, []);
+
   return (
-    <section id="hero" className="mx-auto w-[min(1100px,92%)] py-28 md:py-36">
-      <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="text-zinc-300">Chandra Kiran Narala</motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="mt-4 max-w-4xl text-4xl md:text-6xl font-semibold leading-tight">FPGA Engineer | Hardware-Aware Software Engineer | Low-Latency Systems Engineer</motion.h1>
-      <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mt-7 max-w-3xl text-xl text-muted">I build performance-critical systems across FPGA, RTL, C++, Python, and distributed systems. My work focuses on low-latency design, hardware/software co-design, memory-efficient architectures, and real-world engineering problems.</motion.p>
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mt-10 flex flex-wrap gap-4">
-        {['Resume', 'GitHub', 'LinkedIn', 'Contact'].map((item) => (
-          <a key={item} href={item === 'Contact' ? '#contact' : '#'} className="rounded-full border border-line bg-soft px-6 py-3 text-lg hover:border-zinc-500 hover:bg-zinc-800/70">{item}</a>
+    <section
+      ref={ref}
+      id="hero"
+      className="mx-auto w-[min(900px,92%)] pt-40 pb-28"
+    >
+      <p className="reveal text-zinc-400 text-base mb-4 tracking-wide">
+        Chandra Kiran Narala
+      </p>
+
+      <h1 className="reveal text-[2.5rem] md:text-[3.5rem] font-semibold leading-[1.15] tracking-tight max-w-3xl">
+        FPGA Engineer &amp; Hardware-Aware Systems Engineer
+      </h1>
+
+      <p className="reveal mt-6 text-lg text-zinc-400 leading-relaxed max-w-2xl">
+        I build performance-critical hardware systems — from RTL design and ASIC flows
+        to FPGA-accelerated low-latency applications. MS Electrical Engineering, NYU Tandon.
+        Currently seeking FPGA, RTL, and hardware design roles.
+      </p>
+
+      <div className="reveal mt-10 flex flex-wrap gap-3">
+        {[
+          { label: 'Resume',   href: '#' },
+          { label: 'GitHub',   href: '#' },
+          { label: 'LinkedIn', href: '#' },
+          { label: 'Contact',  href: '#contact' },
+        ].map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm text-zinc-300 hover:border-white/25 hover:text-white hover:bg-white/[0.08] transition-all duration-200"
+          >
+            {item.label}
+          </a>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

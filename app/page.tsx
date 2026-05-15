@@ -1,68 +1,129 @@
 import Image from 'next/image';
-import { Hero } from '@/components/Hero';
-import { Navbar } from '@/components/Navbar';
-import { SectionTitle } from '@/components/SectionTitle';
-import { SkillPill } from '@/components/SkillPill';
+import { Navbar }         from '@/components/Navbar';
+import { Hero }           from '@/components/Hero';
+import { SectionTitle }   from '@/components/SectionTitle';
+import { SkillPill }      from '@/components/SkillPill';
 import { ExperienceCard } from '@/components/ExperienceCard';
-import { ProjectCard } from '@/components/ProjectCard';
+import { ProjectCard }    from '@/components/ProjectCard';
 import { ContactSection } from '@/components/ContactSection';
-import { experiences, projects, researchInterests, skills } from '@/data/portfolio';
+import { RevealWrapper }  from '@/components/RevealWrapper';
+import { experiences, projects, skills } from '@/data/portfolio';
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
-        <Hero />
 
-        <section className="mx-auto w-[min(1100px,92%)] py-20" id="about">
-          <SectionTitle title="About Me" id="about-title" />
-          <div className="grid gap-10 md:grid-cols-2 items-center section-wrap p-7 md:p-10">
-            <div className="space-y-6 text-xl text-muted leading-relaxed">
-              <p>I am an FPGA-focused engineer with strong foundations in RTL development, ASIC/SRAM design, and hardware-aware systems software.</p>
-              <p>I enjoy architecting low-latency solutions where microsecond-level behavior matters—from memory-centric design to throughput-driven distributed systems.</p>
-              <p>My engineering style combines hands-on implementation, timing-aware optimization, and research-driven problem solving.</p>
-            </div>
-            <div className="justify-self-center">
-              <div className="rounded-3xl border border-line bg-soft p-2 shadow-card">
-                <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop" alt="Portrait placeholder" width={420} height={500} className="rounded-2xl object-cover" priority />
+      {/* RevealWrapper: attaches IntersectionObserver on the client */}
+      <RevealWrapper>
+        <main>
+
+          {/* ── HERO ──────────────────────────────────────────────── */}
+          <Hero />
+
+          {/* ── ABOUT ─────────────────────────────────────────────── */}
+          <section
+            id="about"
+            className="border-t border-white/[0.06] py-20"
+          >
+            <div className="mx-auto w-[min(1100px,92%)]">
+              <SectionTitle title="About Me" />
+
+              {/* Two-column: text left, photo right */}
+              <div className="grid gap-12 md:grid-cols-[1fr_340px] items-start">
+
+                {/* Left — text */}
+                <div className="space-y-5 text-[1.05rem] text-zinc-400 leading-relaxed">
+                  <p className="reveal">
+                    I am an FPGA and RTL engineer with hands-on experience across{' '}
+                    <span className="text-zinc-200">ASIC/SRAM design</span>,{' '}
+                    <span className="text-zinc-200">hardware acceleration</span>, and{' '}
+                    <span className="text-zinc-200">low-latency systems</span>. My work spans
+                    the full hardware stack — from writing Verilog and closing timing at 7nm,
+                    to co-designing hardware/software pipelines for real-time applications.
+                  </p>
+                  <p className="reveal">
+                    I hold an MS in Electrical Engineering from{' '}
+                    <span className="text-zinc-200">NYU Tandon</span> with coursework in
+                    Advanced VLSI, Computer System Architecture, Analog Systems, and DSP.
+                    I completed my undergraduate in Electronics &amp; Communications Engineering
+                    at GVPCOE before joining Cognizant as a Programmer Analyst.
+                  </p>
+                  <p className="reveal">
+                    Beyond hardware, I care about the intersection of silicon and software —
+                    building tools and systems where every nanosecond and every byte matters.
+                    I&apos;m currently pursuing FPGA Engineer, ASIC Design, and RTL Design roles.
+                  </p>
+                </div>
+
+                {/* Right — photo */}
+                <div className="reveal justify-self-center md:justify-self-end">
+                  <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2 shadow-xl">
+                    <div className="rounded-xl overflow-hidden w-[280px] h-[320px] md:w-[300px] md:h-[360px] bg-surface flex items-center justify-center text-zinc-600 text-sm">
+                      {/*
+                        Replace this div with:
+                        <Image src="/photo.jpg" alt="Chandra Kiran Narala" width={300} height={360} className="object-cover" />
+                      */}
+                      <div className="text-center space-y-2 px-6">
+                        <div className="text-3xl">📸</div>
+                        <p className="text-xs text-zinc-500">Add your photo as<br /><code className="text-zinc-400">public/photo.jpg</code></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Arsenal — below the grid, matching reference */}
+              <div id="arsenal" className="mt-16 pt-16 border-t border-white/[0.06]">
+                <h3 className="reveal text-center text-xl font-semibold mb-8 text-zinc-200 tracking-tight">
+                  Technical Arsenal
+                </h3>
+                <div className="reveal flex flex-wrap justify-center gap-2.5">
+                  {skills.map((skill) => (
+                    <SkillPill key={skill} skill={skill} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="mx-auto w-[min(1100px,92%)] py-16" id="arsenal">
-          <SectionTitle title="Technical Arsenal" id="skills" />
-          <div className="section-wrap p-6 flex flex-wrap gap-3 justify-center">
-            {skills.map((skill) => <SkillPill key={skill} skill={skill} />)}
-          </div>
-        </section>
+          {/* ── EXPERIENCE ────────────────────────────────────────── */}
+          <section
+            id="experience"
+            className="border-t border-white/[0.06] py-20"
+          >
+            <div className="mx-auto w-[min(900px,92%)]">
+              <SectionTitle title="Work Experience" />
 
-        <section className="mx-auto w-[min(1100px,92%)] py-20" id="experience">
-          <SectionTitle title="Work Experience" id="experience-title" />
-          <div className="relative space-y-8 before:absolute before:left-1 before:top-0 before:h-full before:w-px before:bg-line">
-            {experiences.map((exp) => <ExperienceCard key={exp.company} exp={exp} />)}
-          </div>
-        </section>
+              <div className="relative">
+                {experiences.map((exp) => (
+                  <ExperienceCard key={exp.company} exp={exp} />
+                ))}
+              </div>
+            </div>
+          </section>
 
-        <section className="mx-auto w-[min(1200px,94%)] py-20" id="projects">
-          <SectionTitle title="Featured Projects" id="projects-title" />
-          <div className="grid gap-5 md:grid-cols-2">
-            {projects.map((project) => <ProjectCard key={project.title} project={project} />)}
-          </div>
-        </section>
+          {/* ── PROJECTS ──────────────────────────────────────────── */}
+          <section
+            id="projects"
+            className="border-t border-white/[0.06] py-20"
+          >
+            <div className="mx-auto w-[min(1100px,92%)]">
+              <SectionTitle title="Featured Projects" />
 
-        <section className="mx-auto w-[min(1000px,92%)] py-20" id="research">
-          <SectionTitle title="Research Interests" id="research-title" />
-          <div className="section-wrap p-7 grid gap-3 sm:grid-cols-2">
-            {researchInterests.map((topic) => (
-              <div key={topic} className="rounded-xl border border-line bg-soft px-4 py-3 text-zinc-200">{topic}</div>
-            ))}
-          </div>
-        </section>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {projects.map((project) => (
+                  <ProjectCard key={project.title} project={project} />
+                ))}
+              </div>
+            </div>
+          </section>
 
-        <ContactSection />
-      </main>
+          {/* ── CONTACT ───────────────────────────────────────────── */}
+          <ContactSection />
+
+        </main>
+      </RevealWrapper>
     </>
   );
 }

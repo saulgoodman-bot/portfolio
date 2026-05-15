@@ -5,19 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: '#090b10',
-        panel: '#11141d',
-        muted: '#9ca3af',
-        line: '#202634',
-        soft: '#151923',
-        accent: '#dbe7ff'
+        base:    '#111111',
+        surface: '#1a1a1a',
+        border:  'rgba(255,255,255,0.08)',
+        muted:   '#888888',
+        pill:    '#222222',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 20px 60px rgba(0,0,0,.35)'
-      }
-    }
+        card: '0 1px 3px rgba(0,0,0,0.5)',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
 
 export default config;
