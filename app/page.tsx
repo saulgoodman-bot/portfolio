@@ -52,7 +52,7 @@ export default function HomePage() {
                 <div className="reveal justify-self-center md:justify-self-end">
                   <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2 shadow-xl">
                     <div className="rounded-xl overflow-hidden w-[280px] h-[320px] md:w-[300px] md:h-[360px] bg-surface flex items-center justify-center text-zinc-600 text-sm">
-                      <Image src="/photo.jpeg" alt="Chandra Kiran Narala" width={300} height={360} className="object-cover" />
+                      <Image src="/photo.jpg" alt="Chandra Kiran Narala" width={300} height={360} className="object-cover" />
                     </div>
                   </div>
                 </div>
