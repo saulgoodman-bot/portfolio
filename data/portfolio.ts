@@ -13,6 +13,16 @@ export type Project = {
   githubUrl?: string;
 };
 
+// Add this type
+export type Education = {
+  institution: string;
+  degree: string;
+  location: string;
+  period: string;
+  courses: string[];
+};
+
+
 // ─── Skills shown in "Technical Arsenal" ───────────────────────
 export const skills = [
   'C++',         
@@ -76,6 +86,35 @@ export const experiences: Experience[] = [
     ],
   },
   // Keep GVPCOE education entry as-is or move to a separate Education section
+];
+
+// ─── Education  ────────────────────────────────────────────
+export const education: Education[] = [
+  {
+    institution: 'NYU Tandon School of Engineering',
+    degree: 'MS in Electrical Engineering',
+    location: 'New York, NY',
+    period: 'Jan 2022 - May 2024',
+    courses: [
+      'Computer System Architecture',
+      'Advanced VLSI Design',
+      'Advanced Hardware Design',
+      'Digital Signal Processing',
+    ],
+  },
+  {
+    institution: 'GVPCOE',
+    degree: 'BE in Electronics & Communications Engineering',
+    location: 'India',
+    period: 'Jul 2016 - Sep 2020',
+    courses: [
+      'Data Structures & Algorithms',
+      'System Design & Optimization',
+      'Computer Architecture',
+      'Digital Signal Processing',
+      'Operating Systems',
+    ],
+  },
 ];
 
 // ─── Featured Projects ──────────────────────────────────────────
