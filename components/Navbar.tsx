@@ -64,7 +64,7 @@ export function Navbar() {
             className="flex items-center gap-0 text-[1.15rem] font-bold tracking-tight select-none"
           >
             <span className="text-white">Chandra Kiran</span>
-            <span className="ml-1.5 rounded bg-white px-1.5 py-0.5 text-[0.7rem] font-bold text-black leading-none tracking-normal align-middle">
+            <span className="ml-1.5 rounded bg-white px-1 py-0.5 text-[1rem] font-bold text-black leading-none tracking-normal align-middle">
               Narala
             </span>
           </a>
