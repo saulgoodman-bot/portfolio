@@ -4,10 +4,11 @@ import { Hero }           from '@/components/Hero';
 import { SectionTitle }   from '@/components/SectionTitle';
 import { SkillPill }      from '@/components/SkillPill';
 import { ExperienceCard } from '@/components/ExperienceCard';
+import { EducationCard }  from '@/components/EducationCard';
 import { ProjectCard }    from '@/components/ProjectCard';
 import { ContactSection } from '@/components/ContactSection';
 import { RevealWrapper }  from '@/components/RevealWrapper';
-import { experiences, projects, skills } from '@/data/portfolio';
+import { experiences, projects, skills, education } from '@/data/portfolio';
 
 export default function HomePage() {
   return (
@@ -101,21 +102,10 @@ export default function HomePage() {
             <div className="mx-auto w-[min(900px,92%)]">
               <SectionTitle title="Education" />
 
-              <div className="space-y-6">
-                <div className="reveal">
-                  <h3 className="text-xl font-semibold">NYU Tandon School of Engineering</h3>
-                  <p className="text-zinc-400">MS in Electrical Engineering · Jan 2022 - May 2024</p>
-                  <p className="text-zinc-500 text-sm mt-1">
-                    Computer System Architecture, Advanced VLSI, Advanced Hardware Design, DSP
-                  </p>
-                </div>
-                <div className="reveal">
-                  <h3 className="text-xl font-semibold">GVPCOE</h3>
-                  <p className="text-zinc-400">BE in Electronics & Communications Engineering · Jul 2016 - Sep 2020</p>
-                  <p className="text-zinc-500 text-sm mt-1">
-                    Data Structures & Algorithms, System Design & Optimization, Computer Architecture, Digital Signal Processing, OS
-                  </p>
-                </div>
+              <div className="relative">
+                {education.map((edu) => (
+                  <EducationCard key={edu.institution} edu={edu} />
+                ))}
               </div>
             </div>
           </section>

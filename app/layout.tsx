@@ -21,6 +21,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      {/*
+        Anti-flash script: runs before React hydration.
+        Reads localStorage and sets the correct theme class immediately
+        so there's no flicker on page load. Default is dark mode.
+      */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'light') {
+                    document.documentElement.classList.add('light');
+                  }
+                  // Default (no stored pref) = dark, so no class needed
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans">{children}</body>
     </html>
   );
