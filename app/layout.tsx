@@ -27,6 +27,7 @@ export default function RootLayout({
         so there's no flicker on page load. Default is dark mode.
       */}
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
