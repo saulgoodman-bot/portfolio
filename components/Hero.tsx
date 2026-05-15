@@ -33,7 +33,7 @@ export function Hero() {
 
       <div className="reveal mt-10 flex flex-wrap gap-3">
         {[
-          { label: 'Resume',   href: '/assets/myresume.pdf' },
+          { label: 'Resume',   href: '/myresume.pdf' },
           { label: 'GitHub',   href: 'https://github.com/chandrakirannarala' },
           { label: 'LinkedIn', href: 'https://linkedin.com/in/chandrakirannarala' },
           { label: 'Contact',  href: '#contact' },
