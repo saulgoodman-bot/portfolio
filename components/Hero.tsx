@@ -28,16 +28,14 @@ export function Hero() {
       </h1>
 
       <p className="reveal mt-6 text-lg text-zinc-400 leading-relaxed max-w-2xl">
-        I build performance-critical hardware systems — from RTL design and ASIC flows
-        to FPGA-accelerated low-latency applications. MS Electrical Engineering, NYU Tandon.
-        Currently seeking FPGA, RTL, and hardware design roles.
+        I design and optimize high-performance digital systems across FPGA, ASIC, RTL, embedded platforms, and low-latency software.
       </p>
 
       <div className="reveal mt-10 flex flex-wrap gap-3">
         {[
-          { label: 'Resume',   href: '#' },
-          { label: 'GitHub',   href: '#' },
-          { label: 'LinkedIn', href: '#' },
+          { label: 'Resume',   href: '/assets/myresume.pdf' },
+          { label: 'GitHub',   href: 'https://github.com/chandrakirannarala' },
+          { label: 'LinkedIn', href: 'https://linkedin.com/in/chandrakirannarala' },
           { label: 'Contact',  href: '#contact' },
         ].map((item) => (
           <a

@@ -15,17 +15,16 @@ export type Project = {
 
 // ─── Skills shown in "Technical Arsenal" ───────────────────────
 export const skills = [
-  'FPGA',
-  'Verilog',
-  'SystemVerilog',
-  'RTL Design',
-  'ASIC Design',
-  'SRAM Design',
-  'MBIST',
-  'Vivado',
-  'Vitis HLS',
-  'Zynq-7000',
-  'C++',
+  'C++',         
+  'C#',
+  'Verilog / VHDL',
+  'PyTorch',
+  'NumPy / Pandas',
+  'Redis',
+  'Streamlit',
+  'Cadence Virtuoso',
+  'TCP/IP',
+  'Distributed Systems',
   'Python',
   'Embedded C',
   'Low-Latency Systems',
@@ -38,44 +37,45 @@ export const skills = [
   'Cocotb',
   'HSPICE',
   'ModelSim',
+  'FPGA',
+  'Verilog',
+  'SystemVerilog',
+  'RTL Design',
+  'ASIC Design',
+  'SRAM Design',
+  'MBIST',
+  'Vivado',
+  'Vitis HLS',
+  'Zynq-7000',
 ];
 
 // ─── Work Experience ────────────────────────────────────────────
 export const experiences: Experience[] = [
   {
     company: 'New York University — Tandon School of Engineering',
-    role: 'Graduate Researcher',
+    role: 'SRAM Design Verification Engineer',   // was "Graduate Researcher"
     location: 'New York, NY',
-    period: '2023 – Present',
+    period: 'Jan 2024 – Nov 2025',               // was "2023 – Present"
     points: [
-      'Designed and validated a high-density 256×4-bit SRAM array at 7nm FinFET node with parasitic-aware HSPICE simulations.',
-      'Reduced dynamic power by ~20% vs. a 6T baseline through mathematical modeling and iterative cell optimization.',
-      'Resolved read/write setup and hold timing violations above 1 GHz via STA, timing-closure iterations, and parasitic back-annotation.',
-      'Automated verification and test flows using Python, TCL scripting, and Cocotb-based testbench infrastructure.',
+      'Led a 4-person team to optimize a 256×4-bit SRAM array in 7nm FinFET, reducing power by ~20% vs 6T baseline.',
+      'Developed and verified SRAM testbenches using Cocotb for Python-based functional and latency testing.',
+      'Resolved critical timing violations for reliable read/write operations at high frequencies via STA and back-annotation.',
+      'Collaborated with physical design team on RTL-level fixes during timing closure; hands-on Cadence ASIC flow exposure.',
     ],
   },
   {
     company: 'Cognizant Technology Solutions',
-    role: 'Programmer Analyst',
+    role: 'Software Engineer',                   // was "Programmer Analyst"
     location: 'India',
-    period: '2021 – 2023',
+    period: 'Nov 2020 – Dec 2021',               // was "2021 – 2023"
     points: [
-      'Optimized distributed data processing pipelines using Python multiprocessing and connection pooling.',
-      'Reduced end-to-end pipeline latency by ~20% and improved throughput by ~15% through profiling and architecture changes.',
-      'Built deployment automation and monitoring tooling for large-scale production services.',
-      'Contributed to debugging, scripting, and reliability improvements across multiple client-facing systems.',
+      'Built Python-based systems handling 100K+ requests/sec, improving throughput by 15% and reducing latency by 20%.',
+      'Built distributed pipelines for low-latency data ingestion and transformation for operational decision-making.',
+      'Implemented monitoring, logging, and debugging strategies maintaining 99.9% uptime in production.',
+      'Developed fault-tolerant systems with retry logic and circuit breakers under high-load conditions.',
     ],
   },
-  {
-    company: 'GVPCOE — Electronics & Communications Engineering',
-    role: 'Bachelor of Engineering',
-    location: 'India',
-    period: '2017 – 2021',
-    points: [
-      'Foundational coursework in VLSI Design, Microprocessors & Microcontrollers, Digital Signal Processing, and Linear & Digital ICs.',
-      'Built hardware projects including a biometric fingerprint identification system and embedded signal acquisition boards.',
-    ],
-  },
+  // Keep GVPCOE education entry as-is or move to a separate Education section
 ];
 
 // ─── Featured Projects ──────────────────────────────────────────
@@ -90,15 +90,15 @@ export const projects: Project[] = [
   {
     title: 'RISC-V RV32I Processor',
     description:
-      'Full 5-stage pipelined implementation of the RISC-V RV32I base integer ISA in SystemVerilog. Includes hazard detection, data forwarding, branch prediction stubs, and instruction/data cache controllers.',
-    tech: ['SystemVerilog', 'RISC-V', 'RV32I', 'Pipelining', 'Computer Architecture'],
+      'Full 5-stage pipelined RV32I processor in SystemVerilog with hazard detection, forwarding logic, and branch stubs. Verified on Basys 3 FPGA at 100 MHz.',
+    tech: ['SystemVerilog', 'RISC-V', 'RV32I', 'Basys 3', 'Pipelining'],
     githubUrl: '#',
   },
   {
-    title: 'MBIST Engine — 256×4b SRAM @ 7nm',
+    title: 'MBIST Engine — 256x4b SRAM @ 7nm',
     description:
-      'Memory Built-In Self-Test engine for a 256×4-bit SRAM at 7nm FinFET. Implements March-C and MATS+ algorithms with full fault coverage analysis, timing verification, and automated TCL regression flows.',
-    tech: ['ASIC', 'SRAM', '7nm PDK', 'MBIST', 'HSPICE', 'TCL', 'Cocotb'],
+      'Memory Built-In Self-Test engine for a 256x4-bit SRAM at 7nm FinFET. Implements March-C and MATS+ algorithms with full fault coverage analysis, timing verification, and automated TCL regression flows.',
+    tech: ['ASIC', 'SRAM', '7nm FinFET', 'MBIST', 'HSPICE', 'Cadence Virtuoso', 'Cocotb', 'TCL'],
     githubUrl: '#',
   },
   {
@@ -120,6 +120,20 @@ export const projects: Project[] = [
     description:
       'Pong game implemented entirely in Verilog on Artix-7 FPGA with 60 fps VGA output. Custom hSync/vSync controller, sprite rendering pipeline, collision detection — zero software overhead, running purely in FPGA fabric.',
     tech: ['Verilog', 'Artix-7', 'VGA', 'FSM', 'Digital Design'],
+    githubUrl: '#',
+  },
+  {
+    title: 'Moving Average Crossover Dashboard',
+    description:
+      'Event-driven trading strategy prototype with live Alpha Vantage data, Streamlit dashboard, Sharpe ratio & Max Drawdown metrics, and Redis caching for sub-second responsiveness.',
+    tech: ['Python', 'Streamlit', 'Alpha Vantage API', 'Redis', 'Plotly', 'Event-Driven'],
+    githubUrl: '#',
+  },
+  {
+    title: 'F1 Performance Analysis Platform',
+    description:
+      'Real-time F1 telemetry dashboard integrating lap times, tyre degradation, and pit stop analytics via OpenF1 API with multi-level caching.',
+    tech: ['Python', 'Streamlit', 'OpenF1 API', 'Redis', 'Plotly'],
     githubUrl: '#',
   },
 ];

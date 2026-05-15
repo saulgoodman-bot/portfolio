@@ -6,6 +6,7 @@ import { Github, Linkedin, FileText, Menu, X } from 'lucide-react';
 const navItems = [
   { label: 'About',      href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Arsenal',    href: '#arsenal' },
   { label: 'Projects',   href: '#projects' },
   { label: 'Contact',    href: '#contact' },
@@ -59,13 +60,13 @@ export function Navbar() {
 
           {/* Social icons */}
           <div className="hidden md:flex items-center gap-4 text-zinc-400">
-            <a href="#" aria-label="GitHub" className="hover:text-white transition-colors">
+            <a href="https://github.com/chandrakirannarala" aria-label="GitHub" className="hover:text-white transition-colors">
               <Github size={18} />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors">
+            <a href="https://linkedin.com/in/chandrakirannarala" aria-label="LinkedIn" className="hover:text-white transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="#" aria-label="Resume" className="hover:text-white transition-colors">
+            <a href="/assets/myresume.pdf" aria-label="Resume" className="hover:text-white transition-colors">
               <FileText size={18} />
             </a>
           </div>
@@ -97,13 +98,13 @@ export function Navbar() {
               </li>
             ))}
             <li className="flex gap-6 text-zinc-400 pt-4">
-              <a href="#" aria-label="GitHub" className="hover:text-white transition-colors">
+              <a href="https://github.com/chandrakirannarala" aria-label="GitHub" className="hover:text-white transition-colors">
                 <Github size={22} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/chandrakirannarala" aria-label="LinkedIn" className="hover:text-white transition-colors">
                 <Linkedin size={22} />
               </a>
-              <a href="#" aria-label="Resume" className="hover:text-white transition-colors">
+              <a href="/assets/myresume.pdf" aria-label="Resume" className="hover:text-white transition-colors">
                 <FileText size={22} />
               </a>
             </li>

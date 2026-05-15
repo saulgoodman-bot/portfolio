@@ -35,24 +35,15 @@ export default function HomePage() {
                 {/* Left — text */}
                 <div className="space-y-5 text-[1.05rem] text-zinc-400 leading-relaxed">
                   <p className="reveal">
-                    I am an FPGA and RTL engineer with hands-on experience across{' '}
-                    <span className="text-zinc-200">ASIC/SRAM design</span>,{' '}
-                    <span className="text-zinc-200">hardware acceleration</span>, and{' '}
-                    <span className="text-zinc-200">low-latency systems</span>. My work spans
-                    the full hardware stack — from writing Verilog and closing timing at 7nm,
-                    to co-designing hardware/software pipelines for real-time applications.
+                    I am an engineer specializing in FPGA/ASIC design, RTL development, and performance-focused hardware-software systems. My background spans Verilog/SystemVerilog, FPGA prototyping, SRAM design, timing analysis, embedded systems, C++, Python, and low-latency data pipelines.
                   </p>
                   <p className="reveal">
-                    I hold an MS in Electrical Engineering from{' '}
-                    <span className="text-zinc-200">NYU Tandon</span> with coursework in
-                    Advanced VLSI, Computer System Architecture, Analog Systems, and DSP.
-                    I completed my undergraduate in Electronics &amp; Communications Engineering
-                    at GVPCOE before joining Cognizant as a Programmer Analyst.
+                    I am actively seeking full-time roles in FPGA design, ASIC design, hardware engineering, digital design, embedded systems, and low-latency systems.
                   </p>
                   <p className="reveal">
                     Beyond hardware, I care about the intersection of silicon and software —
                     building tools and systems where every nanosecond and every byte matters.
-                    I&apos;m currently pursuing FPGA Engineer, ASIC Design, and RTL Design roles.
+                    I&apos;m currently pursuing Software Engineer, FPGA Compiler Software Engineer, ASIC Design, and RTL Design roles.
                   </p>
                 </div>
 
@@ -99,6 +90,32 @@ export default function HomePage() {
                 {experiences.map((exp) => (
                   <ExperienceCard key={exp.company} exp={exp} />
                 ))}
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="education"
+            className="border-t border-white/[0.06] py-20"
+          >
+            <div className="mx-auto w-[min(900px,92%)]">
+              <SectionTitle title="Education" />
+
+              <div className="space-y-6">
+                <div className="reveal">
+                  <h3 className="text-xl font-semibold">NYU Tandon School of Engineering</h3>
+                  <p className="text-zinc-400">MS in Electrical Engineering · Jan 2022 - May 2024</p>
+                  <p className="text-zinc-500 text-sm mt-1">
+                    Computer System Architecture, Advanced VLSI, Advanced Hardware Design, DSP
+                  </p>
+                </div>
+                <div className="reveal">
+                  <h3 className="text-xl font-semibold">GVPCOE</h3>
+                  <p className="text-zinc-400">BE in Electronics & Communications Engineering · Jul 2016 - Sep 2020</p>
+                  <p className="text-zinc-500 text-sm mt-1">
+                    Data Structures & Algorithms, System Design & Optimization, Computer Architecture, Digital Signal Processing, OS
+                  </p>
+                </div>
               </div>
             </div>
           </section>

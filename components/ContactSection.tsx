@@ -21,7 +21,7 @@ export function ContactSection() {
 
         {/* "Say Hello" pill button — matches reference exactly */}
         <a
-          href="mailto:chandrakiran@example.com"
+          href="mailto:chandrakirannarala@gmail.com"
           className="reveal inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-base font-semibold text-black hover:bg-zinc-100 transition-colors duration-200 shadow-lg"
         >
           <Mail size={18} />
